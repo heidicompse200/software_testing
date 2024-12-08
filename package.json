@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "mocha",
+    "mocha": "_mocha -b -R spec",
     "test-cov": "nyc npm run mocha",
     "test-coveralls": "nyc npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose"
   },
