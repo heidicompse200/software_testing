@@ -15,10 +15,13 @@ describe('Testing the Chunk Function', function() {
         expect(chunk(array, number)).to.deep.equal([]);
     });
 
-    it('Testing the situation when chunk is longer than the array', function() {
+    it('Testing if function throws error when chunk is longer than the array', function() {
         let array = ['a','b','c','d']
         let number = 5
-        expect(chunk(array, number).not.to.throw());
+        assert.doesNotThrow(
+            () => chunk(array, number),
+            Error
+        );
     });
 
 });
