@@ -27,11 +27,10 @@ jobs:
         node-version: 20.x
         cache: 'npm'
 
-    - name: npm install, npm test, make test-coverage
+    - name: npm install, npm test
       run: |
         npm install
         npm test
-        npm run test-coveralls
 
     - name: Coveralls
       uses: coverallsapp/github-action@v2
