@@ -24,4 +24,15 @@ describe('Testing the Chunk Function', function() {
         );
     });
 
+    it('Testing when chunk cant be split evenly. Final chunk should be the remaining elements', function() {
+        let array = [1,2,3,4] 
+        let number = 3
+        assert.doesNotThrow(
+            () => chunk(array, number),
+            Error
+        );
+
+        expect(chunk(array, number)).to.deep.equal([[1,2,3], [4]]);
+    });
+
 });
