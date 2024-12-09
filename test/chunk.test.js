@@ -1,10 +1,24 @@
 import { assert, expect } from 'chai';
-import Chunk from '../src/chunk.js';
+import chunk from '../src/chunk.js';
 
-describe('Testing the Chunk Functions', function() {
+describe('Testing the Chunk Function', function() {
 
-    it('Testi', function() {
-        var result = 5*2;
-        assert.equal(result, 10);
+    it('Testing basic functionality of chunk with array=[a,b,c,d] and length=2', function() {
+        let array = ['a', 'b', 'c', 'd']
+        let number = 2
+        expect(chunk(array, number)).to.deep.equal([['a','b'], ['c','d']]);
     });
+
+    it('Testing the situation when chunk length is zero (0)', function() {
+        let array = [1,2]
+        let number = 0
+        expect(chunk(array, number)).to.deep.equal([]);
+    });
+
+    it('Testing the situation when chunk is longer than the array', function() {
+        let array = ['a','b','c','d']
+        let number = 5
+        expect(chunk(array, number).not.to.throw());
+    });
+
 });
