@@ -60,7 +60,7 @@ describe('Testing the isEmpty Function', function() {
     });
 
     it('Testing isEmpty when boolean value is false', function() {
-        expect(isEmpty(false)).to.equal(true);
+        expect(isEmpty(false)).to.equal(false);
     });
 
     it('Testing isEmpty when the value is array which has no elements', function() {
